@@ -165,7 +165,15 @@ namespace Unity.FPS.Game
 
         void Awake()
         {
-            m_CurrentAmmo = MaxAmmo;
+            if (MaxAmmo == 0)
+            {
+                m_CurrentAmmo = Mathf.Infinity;
+            }
+            else
+            {
+                m_CurrentAmmo = MaxAmmo;
+
+            }
             m_CarriedPhysicalBullets = HasPhysicalBullets ? ClipSize : 0;
             m_LastMuzzlePosition = WeaponMuzzle.position;
 
@@ -217,6 +225,7 @@ namespace Unity.FPS.Game
 
         void Reload()
         {
+            if (MaxAmmo == 0) return;
             if (m_CarriedPhysicalBullets > 0)
             {
                 m_CurrentAmmo = Mathf.Min(m_CarriedPhysicalBullets, ClipSize);
@@ -249,30 +258,32 @@ namespace Unity.FPS.Game
 
         void UpdateAmmo()
         {
-            if (AutomaticReload && m_LastTimeShot + AmmoReloadDelay < Time.time && m_CurrentAmmo < MaxAmmo && !IsCharging)
+            if (MaxAmmo == 0)
             {
-                // reloads weapon over time
-                m_CurrentAmmo += AmmoReloadRate * Time.deltaTime;
-
-                // limits ammo to max value
-                m_CurrentAmmo = Mathf.Clamp(m_CurrentAmmo, 0, MaxAmmo);
-
-                IsCooling = true;
+                // Infinite ammo if MaxAmmo is 0
+                CurrentAmmoRatio = Mathf.Infinity;
             }
             else
             {
-                IsCooling = false;
-            }
+                if (AutomaticReload && m_LastTimeShot + AmmoReloadDelay < Time.time && m_CurrentAmmo < MaxAmmo && !IsCharging)
+                {
+                    // reloads weapon over time
+                    m_CurrentAmmo += AmmoReloadRate * Time.deltaTime;
 
-            if (MaxAmmo == Mathf.Infinity)
-            {
-                CurrentAmmoRatio = 1f;
-            }
-            else
-            {
+                    // limits ammo to max value
+                    m_CurrentAmmo = Mathf.Clamp(m_CurrentAmmo, 0, MaxAmmo);
+
+                    IsCooling = true;
+                }
+                else
+                {
+                    IsCooling = false;
+                }
+
                 CurrentAmmoRatio = m_CurrentAmmo / MaxAmmo;
             }
         }
+
 
         void UpdateCharge()
         {
@@ -344,6 +355,12 @@ namespace Unity.FPS.Game
 
         public void UseAmmo(float amount)
         {
+            if (MaxAmmo == 0)
+            {
+                // Ammo is infinite, no need to reduce ammo
+                return;
+            }
+
             m_CurrentAmmo = Mathf.Clamp(m_CurrentAmmo - amount, 0f, MaxAmmo);
             m_CarriedPhysicalBullets -= Mathf.RoundToInt(amount);
             m_CarriedPhysicalBullets = Mathf.Clamp(m_CarriedPhysicalBullets, 0, MaxAmmo);

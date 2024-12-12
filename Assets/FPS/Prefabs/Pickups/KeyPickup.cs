@@ -3,6 +3,7 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     public GameObject keyPrefab; // Reference to the key prefab
+    public GameObject door;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class KeyPickup : MonoBehaviour
             Debug.Log("Key picked up! Now you can open the door.");
 
             // Destroy the key prefab after pickup
+            Destroy(GameObject.Find("panel_door"));
             Destroy(gameObject);
         }
     }

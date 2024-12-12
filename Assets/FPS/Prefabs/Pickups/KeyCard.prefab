@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.74, y: 0.74, z: 0.74}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8045354046604059365}
   - {fileID: 4994786086035978387}
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPrefab: {fileID: 1008619406971707894}
+  door: {fileID: 2998176642456441292, guid: 43bd33b4b618f41eabdd0899e86d1ecb, type: 3}
 --- !u!1 &2255922095493562845
 GameObject:
   m_ObjectHideFlags: 0

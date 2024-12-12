@@ -1,50 +1,74 @@
-using System.Collections;
 using System.Collections.Generic;
+using Unity.FPS.Game;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BabyYodaFollower : MonoBehaviour
 {
     public Transform Player; // Reference to the player
-    public float FollowDistance = 2.0f; // Distance to maintain from the player
+    public float FollowDistance = -2.0f; // Distance to maintain from the player
     public float MoveSpeed = 3.5f; // Speed at which Baby Yoda moves
 
-    private UnityEngine.AI.NavMeshAgent navMeshAgent;
+    private NavMeshAgent navMeshAgent;
 
     void Start()
     {
-        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+
         if (navMeshAgent == null)
         {
-            Debug.LogError("NavMeshAgent is not attached to Baby Yoda!");
+            Debug.LogError("NavMeshAgent is not attached to Baby Yoda! Disabling script.");
+            enabled = false;
+            return;
         }
 
+        // Dynamically find the Player if not assigned
         if (Player == null)
         {
-            // Find the player dynamically if not set in the Inspector
-            Player = GameObject.FindWithTag("Player")?.transform;
-            if (Player == null)
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
             {
-                Debug.LogError("Player with tag 'Player' not found in the scene!");
+                Player = playerObject.transform;
+            }
+            else
+            {
+                Debug.LogError("Player with tag 'Player' not found in the scene! Disabling script.");
+                enabled = false;
+                return;
             }
         }
 
-        // Ensure Baby Yoda starts on the NavMesh
-        if (!UnityEngine.AI.NavMesh.SamplePosition(transform.position, out var hit, 1.0f, UnityEngine.AI.NavMesh.AllAreas))
+        // Snap Baby Yoda to the NavMesh
+        if (!NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
         {
-            Debug.LogError("Baby Yoda is not on the NavMesh! Please adjust its position.");
-            enabled = false; // Disable the script to prevent errors
+            Debug.LogError("Baby Yoda is not close enough to the NavMesh! Disabling script.");
+            enabled = false;
+            return;
         }
+        else
+        {
+            transform.position = hit.position; // Snap to the nearest point on the NavMesh
+            Debug.Log("Baby Yoda successfully snapped to the NavMesh.");
+        }
+
+        // Force NavMeshAgent to reset
+        navMeshAgent.enabled = false;
+        navMeshAgent.enabled = true;
     }
 
     void Update()
     {
         if (Player == null || navMeshAgent == null)
+        {
+            Debug.LogWarning("Player or NavMeshAgent is missing. Stopping Baby Yoda.");
             return;
+        }
 
-        // Ensure the NavMeshAgent is on the NavMesh
+        // Check if NavMeshAgent is active and on the NavMesh
         if (!navMeshAgent.isOnNavMesh)
         {
-            Debug.LogWarning("NavMeshAgent is not on a NavMesh! Stopping movement.");
+            Debug.LogWarning($"NavMeshAgent is not on a NavMesh! Position: {transform.position}");
+            Debug.Log($"NavMeshAgent enabled: {navMeshAgent.enabled}, Transform position: {transform.position}");
             return;
         }
 
@@ -56,11 +80,19 @@ public class BabyYodaFollower : MonoBehaviour
         {
             navMeshAgent.SetDestination(Player.position);
             navMeshAgent.speed = MoveSpeed;
+            Debug.Log($"Baby Yoda moving towards Player. Distance: {distanceToPlayer}");
         }
         else
         {
-            // Stop moving when within follow distance
             navMeshAgent.ResetPath();
+            Debug.Log("Baby Yoda is within follow distance. Stopping movement.");
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        // Draw a circle representing the follow distance
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, FollowDistance);
     }
 }

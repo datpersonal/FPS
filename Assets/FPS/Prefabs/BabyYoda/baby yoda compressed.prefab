@@ -26,22 +26,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -36.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.265
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.52
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f9edfd9e824e74a678b1f58e78617e8c,
         type: 3}
@@ -78,8 +78,67 @@ PrefabInstance:
       propertyPath: m_Name
       value: baby yoda compressed
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f9edfd9e824e74a678b1f58e78617e8c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2654713335656134247, guid: f9edfd9e824e74a678b1f58e78617e8c, type: 3}
+    - {fileID: -8700617353114198275, guid: f9edfd9e824e74a678b1f58e78617e8c, type: 3}
+    - {fileID: -2572967989333021709, guid: f9edfd9e824e74a678b1f58e78617e8c, type: 3}
+    - {fileID: 65702495048144492, guid: f9edfd9e824e74a678b1f58e78617e8c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9edfd9e824e74a678b1f58e78617e8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2124536829549135114}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9edfd9e824e74a678b1f58e78617e8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4739477409792409723}
   m_SourcePrefab: {fileID: 100100000, guid: f9edfd9e824e74a678b1f58e78617e8c, type: 3}
+--- !u!1 &8516583151008886832 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f9edfd9e824e74a678b1f58e78617e8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8859023094086045025}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &2124536829549135114
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516583151008886832}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &4739477409792409723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8516583151008886832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c335f971ff14d5696a1c4acbff6827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowDistance: 2
+  MoveSpeed: 3.5

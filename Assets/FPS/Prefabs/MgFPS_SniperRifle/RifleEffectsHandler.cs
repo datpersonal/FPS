@@ -30,11 +30,11 @@ namespace Unity.FPS.Addons
             DebugUtility.HandleErrorIfNullGetComponent<WeaponController, WeaponFuelCellHandler>(m_Weapon, this,
                 gameObject);
 
-            for (int i = 0; i < parts.Length; i++)
-            {
-                parts[i].localPosition = Vector3.zero;
-            }
-
+            // for (int i = 0; i < parts.Length; i++)
+            //  {
+            //     parts[i].localPosition = Vector3.zero;
+            //  }
+            parts[0].localPosition = Vector3.zero;
             m_Weapon.OnShoot += HandleShoot;
         }
 

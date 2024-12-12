@@ -11280,7 +11280,7 @@ PrefabInstance:
     - target: {fileID: 298744117520805562, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: StartingWeapons.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 298744117520805562, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -11292,7 +11292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: StartingWeapons.Array.data[1]
       value: 
-      objectReference: {fileID: 8323776800172828795, guid: a3d20718f5f4f9147b1a38a1d1821ad2,
+      objectReference: {fileID: 2548621757172448860, guid: c0868b9932636dd4ea5f987853138893,
         type: 3}
     - target: {fileID: 298744117520805562, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
@@ -13003,7 +13003,7 @@ PrefabInstance:
         type: 3}
       propertyPath: LootPrefab
       value: 
-      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+      objectReference: {fileID: 1451776928661816515, guid: bc2a7d25f4308f64ebb2ad4e7de630f7,
         type: 3}
     - target: {fileID: 2109373353026533709, guid: 3dbf595fe4d049141afd4d5376f08948,
         type: 3}

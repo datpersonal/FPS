@@ -1,15 +1,15 @@
-using System.Collections.Generic;
 using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BabyYodaFollower : MonoBehaviour
 {
-    public Transform Player; // Reference to the player
-    public float FollowDistance = -2.0f; // Distance to maintain from the player
+    public float ActivateFollowDistance = 5.0f; // Distance to activate following behavior
+    public float StopFollowDistance = 8.0f; // Distance to stop following the player
     public float MoveSpeed = 3.5f; // Speed at which Baby Yoda moves
 
     private NavMeshAgent navMeshAgent;
+    private Transform playerTransform; // Reference to the player's Transform
 
     void Start()
     {
@@ -22,20 +22,17 @@ public class BabyYodaFollower : MonoBehaviour
             return;
         }
 
-        // Dynamically find the Player if not assigned
-        if (Player == null)
+        // Dynamically find the Player by tag
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
         {
-            GameObject playerObject = GameObject.FindWithTag("Player");
-            if (playerObject != null)
-            {
-                Player = playerObject.transform;
-            }
-            else
-            {
-                Debug.LogError("Player with tag 'Player' not found in the scene! Disabling script.");
-                enabled = false;
-                return;
-            }
+            playerTransform = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogError("Player with tag 'Player' not found in the scene! Disabling script.");
+            enabled = false;
+            return;
         }
 
         // Snap Baby Yoda to the NavMesh
@@ -58,7 +55,7 @@ public class BabyYodaFollower : MonoBehaviour
 
     void Update()
     {
-        if (Player == null || navMeshAgent == null)
+        if (playerTransform == null || navMeshAgent == null)
         {
             Debug.LogWarning("Player or NavMeshAgent is missing. Stopping Baby Yoda.");
             return;
@@ -73,26 +70,41 @@ public class BabyYodaFollower : MonoBehaviour
         }
 
         // Calculate distance to the player
-        float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
+        float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
-        // Move towards the player if not within follow distance
-        if (distanceToPlayer > FollowDistance)
+        // Check if the player is within the follow activation range
+        if (distanceToPlayer <= ActivateFollowDistance)
         {
-            navMeshAgent.SetDestination(Player.position);
-            navMeshAgent.speed = MoveSpeed;
-            Debug.Log($"Baby Yoda moving towards Player. Distance: {distanceToPlayer}");
+            // Move towards the player if they are within the follow distance
+            if (distanceToPlayer > StopFollowDistance)
+            {
+                navMeshAgent.SetDestination(playerTransform.position);
+                navMeshAgent.speed = MoveSpeed;
+                Debug.Log($"Baby Yoda moving towards Player. Distance: {distanceToPlayer}");
+            }
+            else
+            {
+                // Stop movement if the player is too far away
+                navMeshAgent.ResetPath();
+                Debug.Log("Baby Yoda is too far from the player. Stopping movement.");
+            }
         }
         else
         {
+            // Stop following if the player is out of the activation range
             navMeshAgent.ResetPath();
-            Debug.Log("Baby Yoda is within follow distance. Stopping movement.");
+            Debug.Log("Player is out of follow range. Baby Yoda stopped.");
         }
     }
 
     void OnDrawGizmosSelected()
     {
-        // Draw a circle representing the follow distance
+        // Draw a circle representing the activation follow distance
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, FollowDistance);
+        Gizmos.DrawWireSphere(transform.position, ActivateFollowDistance);
+
+        // Draw a circle representing the stop follow distance
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, StopFollowDistance);
     }
 }

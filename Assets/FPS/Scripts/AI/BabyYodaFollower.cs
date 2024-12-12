@@ -1,8 +1,6 @@
-using System.Collections.Generic;
-using Unity.FPS.Game;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
+
 public class BabyYodaFollower : MonoBehaviour
 {
     public float ActivateFollowDistance = 10.0f; // Distance to activate following behavior
@@ -18,6 +16,7 @@ public class BabyYodaFollower : MonoBehaviour
 
         if (navMeshAgent == null)
         {
+            Debug.LogError("NavMeshAgent is not attached to Baby Yoda! Disabling script.");
             enabled = false;
             return;
         }
@@ -30,24 +29,24 @@ public class BabyYodaFollower : MonoBehaviour
         }
         else
         {
+            Debug.LogError("Player with tag 'Player' not found in the scene! Disabling script.");
             enabled = false;
             return;
         }
 
-        // Snap Baby Yoda to the NavMesh
-        if (!NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+        // Snap Baby Yoda to the nearest point on the NavMesh
+        NavMeshHit closestHit;
+        if (NavMesh.SamplePosition(transform.position, out closestHit, 500f, NavMesh.AllAreas))
         {
-            enabled = false;
-            return;
+            transform.position = closestHit.position;
+            Debug.Log("Baby Yoda successfully snapped to the NavMesh.");
         }
         else
         {
-            transform.position = hit.position; // Snap to the nearest point on the NavMesh
+            Debug.LogError("Could not find a position on the NavMesh close to Baby Yoda's starting position.");
+            enabled = false;
+            return;
         }
-
-        // Force NavMeshAgent to reset
-        navMeshAgent.enabled = false;
-        navMeshAgent.enabled = true;
     }
 
     void Update()
@@ -59,32 +58,33 @@ public class BabyYodaFollower : MonoBehaviour
 
         if (!navMeshAgent.isOnNavMesh)
         {
+            Debug.LogWarning($"NavMeshAgent is not on a NavMesh! Position: {transform.position}");
             return;
         }
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
-        // Log agent details
-        Debug.Log($"Agent Has Path: {navMeshAgent.hasPath}, Is Stuck: {navMeshAgent.isStopped}, Remaining Distance: {navMeshAgent.remainingDistance}");
-
+        // Follow player if within activation range
         if (distanceToPlayer <= ActivateFollowDistance)
         {
             if (distanceToPlayer > StopFollowDistance)
             {
-                if (!navMeshAgent.hasPath || navMeshAgent.remainingDistance < 0.1f)
-                {
-                    navMeshAgent.SetDestination(playerTransform.position);
-                }
+                navMeshAgent.SetDestination(playerTransform.position);
                 navMeshAgent.speed = MoveSpeed;
+                Debug.Log($"Baby Yoda moving towards Player. Distance: {distanceToPlayer}");
             }
             else
             {
+                // Stop moving when close to the player
                 navMeshAgent.ResetPath();
+                Debug.Log("Baby Yoda is close to the player. Stopping movement.");
             }
         }
         else
         {
+            // Stop following if the player is out of range
             navMeshAgent.ResetPath();
+            Debug.Log("Player is out of follow range. Baby Yoda stopped.");
         }
     }
 

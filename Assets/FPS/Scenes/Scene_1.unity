@@ -1300,6 +1300,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2864,6 +2870,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2955,6 +2967,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3695,6 +3713,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4316,6 +4340,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5276,6 +5306,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2109373353026533709, guid: 3dbf595fe4d049141afd4d5376f08948,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 7430544222941420330, guid: 3dbf595fe4d049141afd4d5376f08948,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5354,6 +5390,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5843,6 +5885,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7170,6 +7218,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7362,6 +7416,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter MiniBot (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12123,6 +12183,12 @@ PrefabInstance:
       propertyPath: Affiliation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalPosition.x

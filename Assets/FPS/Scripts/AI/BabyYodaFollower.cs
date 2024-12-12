@@ -18,7 +18,6 @@ public class BabyYodaFollower : MonoBehaviour
 
         if (navMeshAgent == null)
         {
-            Debug.LogError("NavMeshAgent is not attached to Baby Yoda! Disabling script.");
             enabled = false;
             return;
         }
@@ -31,7 +30,6 @@ public class BabyYodaFollower : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player with tag 'Player' not found in the scene! Disabling script.");
             enabled = false;
             return;
         }
@@ -39,14 +37,12 @@ public class BabyYodaFollower : MonoBehaviour
         // Snap Baby Yoda to the NavMesh
         if (!NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
         {
-            Debug.LogError("Baby Yoda is not close enough to the NavMesh! Disabling script.");
             enabled = false;
             return;
         }
         else
         {
             transform.position = hit.position; // Snap to the nearest point on the NavMesh
-            Debug.Log("Baby Yoda successfully snapped to the NavMesh.");
         }
 
         // Force NavMeshAgent to reset
@@ -58,13 +54,11 @@ public class BabyYodaFollower : MonoBehaviour
     {
         if (playerTransform == null || navMeshAgent == null)
         {
-            Debug.LogWarning("Player or NavMeshAgent is missing. Stopping Baby Yoda.");
             return;
         }
 
         if (!navMeshAgent.isOnNavMesh)
         {
-            Debug.LogWarning($"NavMeshAgent is not on a NavMesh! Position: {transform.position}");
             return;
         }
 
@@ -80,20 +74,17 @@ public class BabyYodaFollower : MonoBehaviour
                 if (!navMeshAgent.hasPath || navMeshAgent.remainingDistance < 0.1f)
                 {
                     navMeshAgent.SetDestination(playerTransform.position);
-                    Debug.Log("Setting new destination for Baby Yoda.");
                 }
                 navMeshAgent.speed = MoveSpeed;
             }
             else
             {
                 navMeshAgent.ResetPath();
-                Debug.Log("Baby Yoda is close to the player. Stopping movement.");
             }
         }
         else
         {
             navMeshAgent.ResetPath();
-            Debug.Log("Player is out of follow range. Baby Yoda stopped.");
         }
     }
 

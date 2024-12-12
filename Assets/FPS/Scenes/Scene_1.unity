@@ -2868,7 +2868,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4094116951752829155, guid: 3dbf595fe4d049141afd4d5376f08948, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dbf595fe4d049141afd4d5376f08948, type: 3}
@@ -11561,6 +11562,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter
       objectReference: {fileID: 0}
+    - target: {fileID: 2797122912509659136, guid: 3dbf595fe4d049141afd4d5376f08948,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700832955390013088, guid: 3dbf595fe4d049141afd4d5376f08948,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.98
+      objectReference: {fileID: 0}
     - target: {fileID: 7430544222941420330, guid: 3dbf595fe4d049141afd4d5376f08948,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11610,6 +11621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970144447707703959, guid: 3dbf595fe4d049141afd4d5376f08948,
+        type: 3}
+      propertyPath: OnDetectVfx.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

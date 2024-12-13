@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/FPS/Scenes/Scene_1.unity
     guid: 46b879869a7c4bf47bd410577a39619b
+  - enabled: 1
+    path: Assets/FPS/Scenes/ObjectivesScene.unity
+    guid: fc16ba47cf8921c46884e4b083e1e92d
+  - enabled: 1
+    path: Assets/FPS/Scenes/ControlsScene.unity
+    guid: d40ce83c206890e42a60563888a1cd09
   m_configObjects: {}

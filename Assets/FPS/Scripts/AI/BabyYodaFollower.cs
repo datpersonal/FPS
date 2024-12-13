@@ -26,6 +26,7 @@ public class BabyYodaFollower : MonoBehaviour
         if (playerObject != null)
         {
             playerTransform = playerObject.transform;
+            playerTransform.position += new Vector3(0, 2, 0);
         }
         else
         {

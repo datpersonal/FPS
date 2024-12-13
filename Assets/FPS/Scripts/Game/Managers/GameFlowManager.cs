@@ -5,13 +5,18 @@ namespace Unity.FPS.Game
 {
     public class GameFlowManager : MonoBehaviour
     {
-        [Header("Parameters")] [Tooltip("Duration of the fade-to-black at the end of the game")]
+        [Header("Parameters")]
+        [Tooltip("Duration of the fade-to-black at the end of the game")]
         public float EndSceneLoadDelay = 3f;
+
+        [Tooltip("Duration of the fade-to-black at the end of the game when losing")]
+        public float LoseSceneLoadDelay = 1f;
 
         [Tooltip("The canvas group of the fade-to-black screen")]
         public CanvasGroup EndGameFadeCanvasGroup;
 
-        [Header("Win")] [Tooltip("This string has to be the name of the scene you want to load when winning")]
+        [Header("Win")]
+        [Tooltip("This string has to be the name of the scene you want to load when winning")]
         public string WinSceneName = "WinScene";
 
         [Tooltip("Duration of delay before the fade-to-black, if winning")]
@@ -19,14 +24,16 @@ namespace Unity.FPS.Game
 
         [Tooltip("Win game message")]
         public string WinGameMessage;
+
         [Tooltip("Duration of delay before the win message")]
         public float DelayBeforeWinMessage = 2f;
 
-        [Tooltip("Sound played on win")] public AudioClip VictorySound;
+        [Tooltip("Sound played on win")]
+        public AudioClip VictorySound;
 
-        [Header("Lose")] [Tooltip("This string has to be the name of the scene you want to load when losing")]
+        [Header("Lose")]
+        [Tooltip("This string has to be the name of the scene you want to load when losing")]
         public string LoseSceneName = "LoseScene";
-
 
         public bool GameIsEnding { get; private set; }
 
@@ -67,33 +74,27 @@ namespace Unity.FPS.Game
 
         void EndGame(bool win)
         {
-            // unlocks the cursor before leaving the scene, to be able to click buttons
+            // Unlocks the cursor before leaving the scene, to be able to click buttons
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
             // Remember that we need to load the appropriate end scene after a delay
             GameIsEnding = true;
             EndGameFadeCanvasGroup.gameObject.SetActive(true);
+
             if (win)
             {
                 m_SceneToLoad = WinSceneName;
                 m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay + DelayBeforeFadeToBlack;
 
-                // play a sound on win
+                // Play a sound on win
                 var audioSource = gameObject.AddComponent<AudioSource>();
                 audioSource.clip = VictorySound;
                 audioSource.playOnAwake = false;
                 audioSource.outputAudioMixerGroup = AudioUtility.GetAudioGroup(AudioUtility.AudioGroups.HUDVictory);
                 audioSource.PlayScheduled(AudioSettings.dspTime + DelayBeforeWinMessage);
 
-                // create a game message
-                //var message = Instantiate(WinGameMessagePrefab).GetComponent<DisplayMessage>();
-                //if (message)
-                //{
-                //    message.delayBeforeShowing = delayBeforeWinMessage;
-                //    message.GetComponent<Transform>().SetAsLastSibling();
-                //}
-
+                // Display win message
                 DisplayMessageEvent displayMessage = Events.DisplayMessageEvent;
                 displayMessage.Message = WinGameMessage;
                 displayMessage.DelayBeforeDisplay = DelayBeforeWinMessage;
@@ -102,7 +103,7 @@ namespace Unity.FPS.Game
             else
             {
                 m_SceneToLoad = LoseSceneName;
-                m_TimeLoadEndGameScene = Time.time + EndSceneLoadDelay;
+                m_TimeLoadEndGameScene = Time.time + LoseSceneLoadDelay;
             }
         }
 

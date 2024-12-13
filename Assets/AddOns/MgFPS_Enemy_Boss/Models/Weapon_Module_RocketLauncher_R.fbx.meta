@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 5798a432695119e44a47157bd44f335a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Mesh_Boss_Module_RocketLauncher_R_E
+    100002: //RootNode
+    100004: RocketLauncher_R_01_Ctrl
+    100006: RocketLauncher_R_01_Grp
+    100008: RocketLauncher_R_01_Grp 1
+    100010: RocketLauncher_R_01Jnt
+    100012: RocketLauncher_R_02_Ctrl
+    100014: RocketLauncher_R_02Jnt
+    100016: RocketLauncher_R_01_Ctrl 1
+    100018: RocketLauncher_R_01_Grp 2
+    100020: RocketLauncher_R_02_Ctrl 1
+    100022: RocketLauncher_R_02_Grp
+    100024: RocketLauncher_R_02Jnt1
+    100026: RocketLauncher_R_02Jnt2
+    100028: RocketLauncher_R_02Jnt3
+    100030: RocketLauncher_R_02Jnt4
+    100032: RocketLauncher_R_02Jnt5
+    100034: RocketLauncher_R_02Jnt6
+    100036: RocketLauncher_R_03_Ctrl
+    100038: RocketLauncher_R_03_Grp
+    100040: RocketLauncher_R_04_Ctrl
+    100042: RocketLauncher_R_04_Grp
+    100044: RocketLauncher_R_05_Ctrl
+    100046: RocketLauncher_R_05_Grp
+    100048: RocketLauncher_R_06_Ctrl
+    100050: RocketLauncher_R_06_Grp
+    400000: Mesh_Boss_Module_RocketLauncher_R_E
+    400002: //RootNode
+    400004: RocketLauncher_R_01_Ctrl
+    400006: RocketLauncher_R_01_Grp
+    400008: RocketLauncher_R_01_Grp 1
+    400010: RocketLauncher_R_01Jnt
+    400012: RocketLauncher_R_02_Ctrl
+    400014: RocketLauncher_R_02Jnt
+    400016: RocketLauncher_R_01_Ctrl 1
+    400018: RocketLauncher_R_01_Grp 2
+    400020: RocketLauncher_R_02_Ctrl 1
+    400022: RocketLauncher_R_02_Grp
+    400024: RocketLauncher_R_02Jnt1
+    400026: RocketLauncher_R_02Jnt2
+    400028: RocketLauncher_R_02Jnt3
+    400030: RocketLauncher_R_02Jnt4
+    400032: RocketLauncher_R_02Jnt5
+    400034: RocketLauncher_R_02Jnt6
+    400036: RocketLauncher_R_03_Ctrl
+    400038: RocketLauncher_R_03_Grp
+    400040: RocketLauncher_R_04_Ctrl
+    400042: RocketLauncher_R_04_Grp
+    400044: RocketLauncher_R_05_Ctrl
+    400046: RocketLauncher_R_05_Grp
+    400048: RocketLauncher_R_06_Ctrl
+    400050: RocketLauncher_R_06_Grp
+    2100000: 'Material #177'
+    2100002: 'Material #199 Slot #2'
+    2100004: Custom_Colour
+    2100006: RobotBody
+    2100008: Barrel
+    4300000: Mesh_Boss_Module_RocketLauncher_R_E
+    9500000: //RootNode
+    13700000: Mesh_Boss_Module_RocketLauncher_R_E
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Custom_Colour
+    second: {fileID: 2100000, guid: 69b13df53c3c65b4488f8bc2f66872f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #177'
+    second: {fileID: 2100000, guid: 69b13df53c3c65b4488f8bc2f66872f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #199 Slot #2'
+    second: {fileID: 2100000, guid: 69b13df53c3c65b4488f8bc2f66872f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RobotBody
+    second: {fileID: 2100000, guid: 69b13df53c3c65b4488f8bc2f66872f7, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

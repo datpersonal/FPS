@@ -1,5 +1,6 @@
 ﻿using Unity.FPS.Game;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Unity.FPS.Gameplay
 {
@@ -25,7 +26,7 @@ namespace Unity.FPS.Gameplay
             if (player != null)
             {
                 CompleteObjective(string.Empty, string.Empty, "Objective complete : " + Title);
-
+                SceneManager.LoadScene("WinScene");
                 // destroy the transform, will remove the compass marker if it has one
                 Destroy(DestroyRoot.gameObject);
             }

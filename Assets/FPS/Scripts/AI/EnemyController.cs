@@ -361,7 +361,7 @@ namespace Unity.FPS.AI
         {
             // spawn a particle system when dying
             var vfx = Instantiate(DeathVfx, DeathVfxSpawnPoint.position, Quaternion.identity);
-            Destroy(vfx, 5f);
+            Destroy(vfx, 10f);
 
             // tells the game flow manager to handle the enemy destuction
             m_EnemyManager.UnregisterEnemy(this);

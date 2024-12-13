@@ -1337,7 +1337,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 5425989825793609977, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_Name
@@ -1636,6 +1636,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29d43f43cc5d82499dd9926e01847d3, type: 3}
+--- !u!198 &190069988 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7957976818100458430, guid: e29d43f43cc5d82499dd9926e01847d3,
+    type: 3}
+  m_PrefabInstance: {fileID: 190069987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &196666516 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2141676431450117668, guid: cd17687759887a0438ee021e51abc9d9,
@@ -3153,7 +3159,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 5425989825793609977, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_Name
@@ -6136,7 +6142,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 9174780463983454576, guid: 3dbf595fe4d049141afd4d5376f08948,
         type: 3}
       propertyPath: AttackRange
@@ -6164,7 +6170,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 5425989825793609977, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_Name
@@ -8039,7 +8045,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 5425989825793609977, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_Name
@@ -13385,7 +13391,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13403,7 +13409,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnDetectVfx.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 190069988}
     - target: {fileID: 5425989825793609977, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_Name
@@ -13414,6 +13420,12 @@ PrefabInstance:
       propertyPath: DropRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7608958474088070841, guid: ac498562fe7c0e64e8a27d987192d078,
+        type: 3}
+      propertyPath: LootPrefab
+      value: 
+      objectReference: {fileID: 2529580269645609534, guid: 9973c412032becb4ca116ca08be62edf,
+        type: 3}
     - target: {fileID: 8289549487477605427, guid: ac498562fe7c0e64e8a27d987192d078,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13502,13 +13514,13 @@ SceneRoots:
   - {fileID: 2729281212887052391}
   - {fileID: 1224239566}
   - {fileID: 4248340690576521156}
+  - {fileID: 6172166861275749528}
   - {fileID: 152188584}
   - {fileID: 1341477524}
   - {fileID: 1831307809}
   - {fileID: 381105026}
   - {fileID: 1338059806}
   - {fileID: 190069987}
-  - {fileID: 6172166861275749528}
   - {fileID: 2729281213170272051}
   - {fileID: 2729281214349345645}
   - {fileID: 2729281214908211604}
